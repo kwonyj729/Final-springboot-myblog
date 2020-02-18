@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cos.blog.repository.MountRepository">
+	<select id="findAllRegions"
+		resultType="com.cos.blog.model.mount.Regions">
+		select * from regions
+	</select>
+	<select id="findAllMountain"
+		resultType="com.cos.blog.model.mount.Mountain">
+		select * from mountain where regionId = #{regionId}
+	</select>
+	<select id="findById"
+		resultType="com.cos.blog.model.mount.Mountain">
+		select * from mountain where id = #{mountId}
+	</select>
+</mapper>
